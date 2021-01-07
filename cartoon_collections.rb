@@ -1,3 +1,5 @@
+require 'pry'
+
 def square_array(array)
   # Use an Enumerable to square every element in the passed in array
   # Return a new array of the results
@@ -16,11 +18,57 @@ def long_planeteer_calls(planeteer_calls)
   planeteer_calls.any?{|el| el.length > 4}
 end
 
+# def find_valid_calls(planeteer_calls)
+#   valid_calls = ["Earth!", "Wind!", "Fire!", "Water!", "Heart!"]
+#   # Use an Enumerable to check if any elements in the passed in array match the valid calls listed above 
+#   # Return the first valid call found, or return nil if no valid calls are found
+#   planeteer_calls.find{|pc_call|
+#     valid_calls.find{|v_call| v_call == pc_call
+#       # binding.pry
+#     }
+#   }
+# end
+
+# def find_valid_calls(planeteer_calls)
+#   valid_calls = ["Earth!","Wind!","Fire!","Water!","Heart!"]
+#   valid_calls.find {|el|
+#     planeteer_calls.each{|call|
+#       print call, el
+#       if call == el
+#         p "This runs"
+#       end
+#     binding.pry
+#     }
+#   }
+# end
+
 def find_valid_calls(planeteer_calls)
-  valid_calls = ["Earth!", "Wind!", "Fire!", "Water!", "Heart!"]
-  # Use an Enumerable to check if any elements in the passed in array match the valid calls listed above 
-  # Return the first valid call found, or return nil if no valid calls are found
-  p planeteer_calls.find{|pc_call|
-    valid_calls.find{|v_call| v_call == pc_call}
-  }
+  valid_calls = ["Earth!", "Wind!", "Fire!","Water!","Heart!"]
+  firstValidCall = ""
+  
+  matches = planeteer_calls & valid_calls
+  binding.pry
+  return matches(0)  
 end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
